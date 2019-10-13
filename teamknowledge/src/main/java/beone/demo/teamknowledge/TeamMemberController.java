@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,8 +24,11 @@ public class TeamMemberController {
 	
 	private TeamMemberRepository repository;
 	
-	private static List<String> skills = Arrays.asList("JAVA", "C", "JAVASCRPT", "RAILS", "SQL");
-	private static List<Integer> skillLevels = Arrays.asList(0,1,2,3,4);
+	@Value("${skill.list}")
+	private  List<String> skills ;
+	
+	@Value("${level.list}")
+	private  List<Integer> skillLevels;
 	
 	public TeamMemberController(TeamMemberRepository repository) {
 		this.repository = repository;
