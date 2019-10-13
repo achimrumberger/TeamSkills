@@ -1,0 +1,25 @@
+<h2>TeamMembers List</h2>
+
+<div>
+<table>
+    <thead>
+        <tr>
+        <th>Name</th>
+        <th>Skill</th>
+        <th>Level</th>
+        <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.skill}}</td>
+        <td>{{user.skillLevel}}</td>
+        <td><button [routerLink]="['/user-edit', user.id]"> edit</button></td>
+        </tr>
+    </tbody>
+    <button [routerLink]="['/user-add']"> add team member</button>
+    <button [routerLink]="['/skill-search']"> Search Skill Level</button>
+
+</table>
+</div>

@@ -1,0 +1,9 @@
+<form #userForm="ngForm" (ngSubmit)="save(userForm.value)">
+        <h2>{{user.name ? 'Edit' : 'Add'}} Team Member</h2>
+        <input type="hidden" name="id" [(ngModel)]="user.id">
+        <input placeholder="User Name" [(ngModel)]="user.name" required name="name" #name>
+        <input placeholder="Skill" [(ngModel)]="user.skill" required name="skill" #name>
+        <input placeholder="Skill Level" [(ngModel)]="user.skillLevel" required name="skillLevel" #name>
+        <button type="submit" [disabled]="!userForm.valid">Save</button>
+        <button [routerLink]="['/user-list']"> Cancel</button>
+</form>

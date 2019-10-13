@@ -1,0 +1,26 @@
+<h2>TeamMembers List</h2>
+<form #userForm="ngForm" (ngSubmit)="save(userForm.value)">
+    <input placeholder="Skill Level" [(ngModel)]="skillLevel" required name="skillLevel" #name>
+    <button type="submit" [disabled]="!userForm.valid">Search</button>
+    <button [routerLink]="['/user-list']"> Cancel</button>
+</form>
+
+<div>
+<table>
+    <thead>
+        <tr>
+        <th>Name</th>
+        <th>Skill</th>
+        <th>Level</th>
+        <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.skill}}</td>
+        <td>{{user.skillLevel}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
