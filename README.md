@@ -1,4 +1,4 @@
-# TeamMemberApp
+# TeaSkills
 ## for the client
 * node version 12
 * npm version 6
